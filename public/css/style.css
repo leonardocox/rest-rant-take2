@@ -1,0 +1,14 @@
+h1 {
+    text-align: center;
+    color: cornflowerblue;
+}
+
+.btn-primary {
+    color: cornflowerblue;
+}
+
+.btn-primary:hover {
+    background: rgba(0, 0, 0, 0);
+    color: #3a7999;
+    box-shadow: inset 0 0 0 3px #3a7999;
+}
