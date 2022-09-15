@@ -18,8 +18,12 @@ router.get("/", (req, res) => {
       pic: "/images/ninja-cafe.jpg",
     },
   ];
-
   res.render("places/index", { places });
+});
+
+router.post("/", (req, res) => {
+  console.log(req.body);
+  res.send("POST /places");
 });
 
 router.get("/new", (req, res) => {
