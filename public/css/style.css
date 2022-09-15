@@ -3,12 +3,79 @@ h1 {
     color: cornflowerblue;
 }
 
+p {
+    text-align: center;
+    color: rgb(230, 102, 102);
+}
+
+.ramen-home {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.phillip {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.fill-button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .btn-primary {
-    color: cornflowerblue;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 25px 80px;
+    display: inline-block;
+    margin: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    transition: all 1s;
+}
+
+.btn-primary {
+    border: 3px solid red;
+    color: red;
 }
 
 .btn-primary:hover {
-    background: rgba(0, 0, 0, 0);
-    color: #3a7999;
-    box-shadow: inset 0 0 0 3px #3a7999;
+    color: #fff;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    transition: all 1s;
+}
+
+.btn-primary:after {
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: red;
+}
+
+.btn-primary:hover:after,
+.btn-primary:active:after {
+    width: 100%;
 }
