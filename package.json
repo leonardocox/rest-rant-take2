@@ -11,6 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.2",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "express-react-views": "^0.11.0"
+  },
+  "nodemonConfig": {
+    "ext": "js,html,json,jsx,mjs"
   }
 }
