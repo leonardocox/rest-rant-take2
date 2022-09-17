@@ -1,29 +1,25 @@
 const router = require("express").Router();
+const places = require("../models/places.js");
 
 // GET /places
 router.get("/", (req, res) => {
-  let places = [
-    {
-      name: "Kirby Cafe",
-      city: "Tokyo",
-      state: "Japan",
-      cuisines: "Kirby Themed Cuisine",
-      pic: "/images/kirby-food.jpg",
-    },
-    {
-      name: "Ninja Shinjuku",
-      city: "Tokyo",
-      state: "Japan",
-      cuisines: "Japanese Cuisine",
-      pic: "/images/ninja-cafe.jpg",
-    },
-  ];
   res.render("places/index", { places });
 });
 
 router.post("/", (req, res) => {
   console.log(req.body);
-  res.send("POST /places");
+  if (!req.body.pic) {
+    // Default image if one is not provided
+    req.body.pic = "http://placekitten.com/400/400";
+  }
+  if (!req.body.city) {
+    req.body.city = "Anytown";
+  }
+  if (!req.body.state) {
+    req.body.state = "USA";
+  }
+  places.push(req.body);
+  res.redirect("POST /places");
 });
 
 router.get("/new", (req, res) => {
