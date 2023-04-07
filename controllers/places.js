@@ -40,11 +40,7 @@ router.get("/newPlace", (req, res) => {
 //Edit Place Page
 router.get("/:id/edit", (req, res) => {
   db.Place.findById(req.params.id)
-    .then((place) => {
-      res.render("places/editPlace", { place });
-      console.log(place);
-    })
-
+    .then((place) => res.render("places/editPlace", { place }))
     .catch((err) => {
       res.render("error404");
       console.log(err);
