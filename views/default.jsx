@@ -9,6 +9,13 @@ function Def (html) {
               <link rel='stylesheet' href='/css/style.css' />
           </head>
           <body>
+            <nav className='container red top-bottom-borders-in'>
+                <div>
+                    <a href='/'>Home</a>
+                    <a href='/places'>Places</a>
+                    <a href='/places/new'>Add Place</a>
+                </div>
+            </nav>
               {html.children}
           </body>
       </html>

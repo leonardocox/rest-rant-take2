@@ -5,7 +5,7 @@ function home () {
     return (
         <Def>
             <main>
-                <h1>HOME</h1>
+                <h1>REST-Rant</h1>
                 <div>
                     <img className='ramen-home' src='/images/ramen.jpg' alt='Ramen'/>
                     <div className='ramen-home'>
