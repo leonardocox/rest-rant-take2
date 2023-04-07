@@ -12,7 +12,21 @@ router.get("/", (req, res) => {
 router.post("/", (req, res) => {
   db.Place.create(req.body)
     .then(() => res.redirect("/places"))
-    .catch((err) => res.render("error404"));
+    .catch((err) => {
+      if (err && err.name == "ValidationError") {
+        //Generate error message
+        let message = "Validation Error: ";
+        for (var field in err.errors) {
+          message += `${field[0].toUpperCase()}${field.slice(1)} was ${
+            err.errors[field].value
+          }.  `;
+          message += `${err.errors[field].message}`;
+        }
+        res.render("places/newPlace", { message }); //Pass in {req.body} to keep valid fields
+      } else {
+        res.render("error404");
+      }
+    });
 });
 
 // router.post('/', (req, res) => {
